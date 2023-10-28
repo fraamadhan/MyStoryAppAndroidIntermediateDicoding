@@ -25,7 +25,7 @@
     <string name="galery">Galery</string>
     <string name="camera">Camera</string>
     <string name="upload">Upload</string>
-    <string name="write_description">Write your story description here...</string>
+    <string name="write_description">Write your story description here&#8230;</string>
     <string name="media_not_selected">Photo Picker: No Media Selected</string>
     <string name="empty_image_warning">Please take/input the picture first</string>
     <string name="logout_status">You are logged out</string>

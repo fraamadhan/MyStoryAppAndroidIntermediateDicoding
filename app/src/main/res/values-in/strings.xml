@@ -26,6 +26,9 @@
     <string name="galery">Galeri</string>
     <string name="camera">Kamera</string>
     <string name="upload">Unggah</string>
-    <string name="write_description">Tulis deskripsi ceritamu di sini...</string>
+    <string name="write_description">Tulis deskripsi ceritamu di sini&#8230;</string>
     <string name="media_not_selected">Pemilih Foto: Tidak Ada Media Dipilih</string>
+    <string name="empty_image_warning">Silakan masukan foto terlebih dahulu</string>
+    <string name="logout_status">Kamu sudah keluar</string>
+    <string name="check_connection_message">Koneksi internet tidak ditemukan. Tolong periksa koneksimu</string>
 </resources>
