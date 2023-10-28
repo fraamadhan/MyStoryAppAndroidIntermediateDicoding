@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aplikasi Cerita</string>
+    <string name="login">Masuk</string>
+    <string name="register">Daftar</string>
+    <string name="welcome_message">Selamat datang di My Story!</string>
+    <string name="welcome_description">Di sini Anda dapat berbagi cerita Anda dan melihat cerita orang lain!\nApakah Anda excited? Ayo kenali orang lain dan biarkan orang lain lebih mengenal Anda!</string>
+    <string name="title_login_page">Siap berbagi ceritamu?</string>
+    <string name="title_register_page">Lengkapi data Anda di bawah ini</string>
+    <string name="message_login_page">Masukkan kredensial Anda terlebih dahulu</string>
+    <string name="name">Nama</string>
+    <string name="password">Kata Sandi</string>
+    <string name="email">Email</string>
+    <string name="password_error_message">Kata sandi tidak boleh kurang dari 8 karakter</string>
+    <string name="email_error_message">Gunakan email yang valid</string>
+    <string name="hint_email">Masukkan email Anda</string>
+    <string name="hint_password">Masukkan kata sandi Anda</string>
+    <string name="hint_name">Masukkan nama Anda</string>
+    <string name="unique_email">Email harus unik</string>
+    <string name="stories_list">Daftar Cerita</string>
+    <string name="have_an_account">Sudah punya akun? Masuk di sini!</string>
+    <string name="does_not_have_account">Belum punya akun? Daftar di sini!</string>
+    <string name="floating_action_button_add">Tambah cerita baru</string>
+    <string name="logout_alert">Anda ingin keluar?</string>
+    <string name="logout_message">Anda yakin ingin meninggalkan kami?</string>
+    <string name="galery">Galeri</string>
+    <string name="camera">Kamera</string>
+    <string name="upload">Unggah</string>
+    <string name="write_description">Tulis deskripsi ceritamu di sini...</string>
+    <string name="media_not_selected">Pemilih Foto: Tidak Ada Media Dipilih</string>
+</resources>

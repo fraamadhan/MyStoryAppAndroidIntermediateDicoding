@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">My Story App</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="welcome_message">Welcome to My Story!</string>
+    <string name="welcome_description">Here you can share your stories and see other stories! \nAre you excited? Let\'s know about others and let others know more about you!</string>
+    <string name="title_login_page">Ready to share your story?</string>
+    <string name="title_register_page">Complete your data below</string>
+    <string name="message_login_page">Input your credentials first</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="password_error_message">Password cannot be less than 8 characters</string>
+    <string name="email_error_message">Use the valid email</string>
+    <string name="hint_email">Input your email</string>
+    <string name="hint_password">Input your password</string>
+    <string name="hint_name">Input your name</string>
+    <string name="unique_email">Email must be unique</string>
+    <string name="stories_list">Peeps Stories</string>
+    <string name="have_an_account">Do you have an account? Login here!</string>
+    <string name="does_not_have_account">Does not have an account? Register here!</string>
+    <string name="floating_action_button_add">add new story</string>
+    <string name="logout_alert">Do you want to logout?</string>
+    <string name="logout_message">Are you sure to leave us?</string>
+    <string name="galery">Galery</string>
+    <string name="camera">Camera</string>
+    <string name="upload">Upload</string>
+    <string name="write_description">Write your story description here...</string>
+    <string name="media_not_selected">Photo Picker: No Media Selected</string>
+    <string name="empty_image_warning">Please take/input the picture first</string>
+    <string name="logout_status">You are logged out</string>
+    <string name="check_connection_message">Internet connection not found. Please check your connection</string>
+</resources>

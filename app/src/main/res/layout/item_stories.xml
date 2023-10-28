@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_stories_list_view"
+    app:cardCornerRadius="3dp"
+    android:layout_marginTop="7dp"
+    android:layout_gravity="center">    
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:fontFamily="sans-serif-condensed-medium">
+
+        <ImageView
+            android:id="@+id/iv_story"
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            tools:src="@drawable/ic_launcher_foreground"
+            android:transitionName="story_pict"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tv_name_story"/>
+        
+        <TextView
+            android:id="@+id/tv_name_story"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="@string/title_register_page"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="7dp"
+            android:transitionName="story_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_story"
+            app:layout_constraintBottom_toTopOf="@id/tv_description_story"/>
+
+        <TextView
+            android:id="@+id/tv_description_story"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="12dp"
+            tools:text="@string/message_login_page"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:transitionName="story_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name_story"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
