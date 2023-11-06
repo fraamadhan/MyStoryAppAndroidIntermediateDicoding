@@ -30,4 +30,8 @@
     <string name="empty_image_warning">Please take/input the picture first</string>
     <string name="logout_status">You are logged out</string>
     <string name="check_connection_message">Internet connection not found. Please check your connection</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="logout">Logout</string>
+    <string name="map">Map</string>
+    <string name="retry">Try Again</string>
 </resources>

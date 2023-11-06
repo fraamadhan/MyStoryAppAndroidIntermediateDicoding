@@ -26,7 +26,7 @@
         app:subtitle="@string/stories_list"
         app:subtitleTextAppearance="@style/TextAppearance.Material3.TitleLarge"
         app:subtitleTextColor="@color/white"
-        app:navigationIcon="@drawable/ic_logout"
+        app:menu="@menu/menu_form"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

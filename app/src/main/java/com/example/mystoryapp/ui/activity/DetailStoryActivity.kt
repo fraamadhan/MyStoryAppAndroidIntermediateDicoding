@@ -2,6 +2,7 @@ package com.example.mystoryapp.ui.activity
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -33,7 +34,7 @@ class DetailStoryActivity : AppCompatActivity() {
             withContext(Dispatchers.Main) {
                 detailViewModel.getUserToken().observe(this@DetailStoryActivity) {userToken ->
                     detailViewModel.getDetailStory(userToken.toString(), storyId.toString()).observe(this@DetailStoryActivity) {
-                        result ->
+                            result ->
                         when(result) {
                             is ResultState.Success -> {
                                 success(result.data)
@@ -68,6 +69,7 @@ class DetailStoryActivity : AppCompatActivity() {
 
     private fun errorToast(message: String) {
         binding?.progressBar?.visibility = View.GONE
+        Toast.makeText(this@DetailStoryActivity, "Error: $message", Toast.LENGTH_SHORT).show()
     }
     companion object{
         const val STORY_ID = "story_id"

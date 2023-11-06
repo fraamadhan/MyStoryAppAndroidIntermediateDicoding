@@ -11,10 +11,10 @@ class ApiConfig {
         fun getApiService(): ApiService{
 //            val authInterceptor = Interceptor { chain ->
 //                val req = chain.request()
-//                val requestHeaders = req.newBuilder()
+//                val request = req.newBuilder()
 //                    .addHeader("Authorization", "Bearer $token")
 //                    .build()
-//                chain.proceed(requestHeaders)
+//                chain.proceed(request)
 //            }
             val loggingInterceptor =
                 if(BuildConfig.DEBUG) {
@@ -24,8 +24,8 @@ class ApiConfig {
                 }
 
             val client = OkHttpClient.Builder()
-                .addInterceptor(loggingInterceptor)
 //                .addInterceptor(authInterceptor)
+                .addInterceptor(loggingInterceptor)
                 .build()
             val retrofit = Retrofit.Builder()
                 .baseUrl(BuildConfig.BASE_URL)

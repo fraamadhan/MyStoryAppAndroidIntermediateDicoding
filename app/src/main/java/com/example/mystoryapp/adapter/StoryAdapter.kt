@@ -8,17 +8,16 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.util.Pair
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mystoryapp.R
 import com.example.mystoryapp.data.response.ListStoryItem
 import com.example.mystoryapp.databinding.ItemStoriesBinding
 import com.example.mystoryapp.ui.activity.DetailStoryActivity
-import com.example.mystoryapp.ui.activity.DetailStoryActivity.Companion.STORY_ID
 
-class StoryAdapter: ListAdapter<ListStoryItem, StoryAdapter.MyViewHolder> (DIFF_CALLBACK) {
+class StoryAdapter: PagingDataAdapter<ListStoryItem, StoryAdapter.MyViewHolder> (DIFF_CALLBACK) {
 
     class MyViewHolder(private val binding: ItemStoriesBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(story: ListStoryItem) {
@@ -40,20 +39,22 @@ class StoryAdapter: ListAdapter<ListStoryItem, StoryAdapter.MyViewHolder> (DIFF_
         var nameStory: TextView = holder.itemView.findViewById<TextView>(R.id.tv_name_story)
         var descriptionStory: TextView = holder.itemView.findViewById(R.id.tv_description_story)
         val story = getItem(position)
-        holder.bind(story)
-        holder.itemView.setOnClickListener {
-            val intent = Intent(holder.itemView.context, DetailStoryActivity::class.java)
-            intent.putExtra(STORY_ID, story.id)
+        if (story != null) {
+            holder.bind(story)
+            holder.itemView.setOnClickListener {
+                val intent = Intent(holder.itemView.context, DetailStoryActivity::class.java)
+                intent.putExtra(DetailStoryActivity.STORY_ID, story.id)
 
-            val optionsCompat: ActivityOptionsCompat =
-                ActivityOptionsCompat.makeSceneTransitionAnimation(
-                    holder.itemView.context as Activity,
-                    Pair(imgPhoto, "story_pict"),
-                    Pair(nameStory, "story_name"),
-                    Pair(descriptionStory, "story_description")
-                )
+                val optionsCompat: ActivityOptionsCompat =
+                    ActivityOptionsCompat.makeSceneTransitionAnimation(
+                        holder.itemView.context as Activity,
+                        Pair(imgPhoto, "story_pict"),
+                        Pair(nameStory, "story_name"),
+                        Pair(descriptionStory, "story_description")
+                    )
 
-            holder.itemView.context.startActivity(intent, optionsCompat.toBundle())
+                holder.itemView.context.startActivity(intent, optionsCompat.toBundle())
+            }
         }
     }
 

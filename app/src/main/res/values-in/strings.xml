@@ -31,4 +31,8 @@
     <string name="empty_image_warning">Silakan masukan foto terlebih dahulu</string>
     <string name="logout_status">Kamu sudah keluar</string>
     <string name="check_connection_message">Koneksi internet tidak ditemukan. Tolong periksa koneksimu</string>
+    <string name="title_activity_maps">Aktivitas Peta</string>
+    <string name="logout">Keluar</string>
+    <string name="map">Peta</string>
+    <string name="retry">Coba lagi</string>
 </resources>

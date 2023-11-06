@@ -10,6 +10,7 @@ import com.example.mystoryapp.ui.viewmodel.DetailViewModel
 import com.example.mystoryapp.ui.viewmodel.LandingPageViewModel
 import com.example.mystoryapp.ui.viewmodel.LoginViewModel
 import com.example.mystoryapp.ui.viewmodel.MainViewModel
+import com.example.mystoryapp.ui.viewmodel.MapsViewModel
 import com.example.mystoryapp.ui.viewmodel.RegisterViewModel
 import com.example.mystoryapp.ui.viewmodel.UploadViewModel
 
@@ -36,6 +37,9 @@ class ViewModelFactory private constructor(
         }
         if (modelClass.isAssignableFrom(UploadViewModel::class.java)) {
             return UploadViewModel(storyRepository, usersRepository) as T
+        }
+        if(modelClass.isAssignableFrom(MapsViewModel::class.java)) {
+            return MapsViewModel(usersRepository, storyRepository) as T
         }
         throw IllegalArgumentException("Unknown Viewmodel CLass: " + modelClass.name)
     }
