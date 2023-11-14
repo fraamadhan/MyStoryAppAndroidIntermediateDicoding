@@ -1,6 +1,7 @@
 package com.example.mystoryapp.repository
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.liveData
 import com.example.mystoryapp.data.api.ApiService
 import com.example.mystoryapp.data.response.GeneralResponse
@@ -15,6 +16,7 @@ class UsersRepository private constructor(
     private val dataStore: LoginPreferences,
 ) {
 
+    val loginResult: LiveData<LoginResponse> = MutableLiveData()
     fun addNewUser(name: String, email: String, password: String) : LiveData<ResultState<GeneralResponse>> = liveData {
         emit(ResultState.Loading)
         try{
@@ -29,6 +31,7 @@ class UsersRepository private constructor(
         emit(ResultState.Loading)
         try{
             val successResponse = apiService.login(email, password)
+            (loginResult as MutableLiveData).value = successResponse
             emit(ResultState.Success(successResponse))
         } catch(e : HttpException) {
             emit(ResultState.Error(e.toString()))

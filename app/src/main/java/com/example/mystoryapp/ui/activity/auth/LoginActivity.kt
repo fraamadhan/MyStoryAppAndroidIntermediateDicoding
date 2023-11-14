@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -38,36 +39,39 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
         }
 
+        if(isOnline(this)) {
+            loginViewModel.getUserLogin().observe(this@LoginActivity) {result ->
+                when(result) {
+                    is ResultState.Success -> {
+                        Log.d("INI RESULT", result.data.message.toString())
+                        success()
+                        val userId = result.data.loginResult?.userId
+                        val name = result.data.loginResult?.name
+                        val token = result.data.loginResult?.token
+                        val user = UserModel(userId!!, name!!, token!!, true)
+                        loginViewModel.saveSession(user)
+                    }
+                    is ResultState.Error -> {
+                        Log.d("ERROR MAS", "ERROR HEULA")
+                        errorToast(result.error)
+                    }
+                    is ResultState.Loading -> {
+                        Log.d("LOADING MAS", "LOADING HEULA")
+                        loading()
+                    }
+                }
+            }
+        } else {
+            errorToast(getString(R.string.check_connection_message))
+        }
+
         binding?.btnLoginPage?.setOnClickListener {
             loading()
             val email = binding?.emailEditText?.text.toString().trim()
             val password = binding?.passwordEditText?.text.toString().trim()
-
-            if(isOnline(this)) {
-                loginViewModel.userLogin(email, password).observe(this@LoginActivity) {result ->
-                    when(result) {
-                        is ResultState.Success -> {
-                            success()
-                            val userId = result.data.loginResult?.userId
-                            val name = result.data.loginResult?.name
-                            val token = result.data.loginResult?.token
-                            val user = UserModel(userId!!, name!!, token!!, true)
-                            loginViewModel.saveSession(user)
-                        }
-                        is ResultState.Error -> {
-                            errorToast(result.error)
-                        }
-                        is ResultState.Loading -> {
-                            loading()
-                        }
-                    }
-                }
-            } else {
-                errorToast(getString(R.string.check_connection_message))
-
-            }
-
+            loginViewModel.userLogin(email, password)
         }
+
         playAnimation()
 
     }

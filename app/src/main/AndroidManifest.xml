@@ -64,7 +64,8 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
-        </provider> <!-- suppress AndroidDomInspection -->
+        </provider>
+
         <service
             android:name="com.google.android.gms.metadata.ModuleDependencies"
             android:enabled="false"
